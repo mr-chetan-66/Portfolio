@@ -1,306 +1,370 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Chetan Awari - backend and cloud software engineer portfolio with Java, Python, AWS, FastAPI, Android, cybersecurity, and product projects."
+      content="Chetan Awari portfolio: software engineer focused on backend, cloud, cybersecurity, Android, FastAPI, Java, Python, AWS, and full-stack product work."
     />
-    <title>Chetan Awari | Backend & Cloud Software Engineer</title>
+    <title>Chetan Awari | Software Engineer</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23070709'/%3E%3Ccircle cx='32' cy='32' r='18' fill='none' stroke='%23b8ff2c' stroke-width='5'/%3E%3Ccircle cx='32' cy='10' r='4' fill='%23b8ff2c'/%3E%3Ctext x='50%25' y='62%25' text-anchor='middle' font-family='JetBrains Mono,monospace' font-size='18' font-weight='800' fill='%23b8ff2c'%3ECA%3C/text%3E%3C/svg%3E"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Bricolage+Grotesque:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="loader" id="loader" aria-label="Loading portfolio">
-      <div class="loader-grid">
-        <p class="mono">Initializing portfolio</p>
-        <h1>LOAD CHETAN</h1>
-        <div class="loader-track">
-          <span id="loaderBar"></span>
-        </div>
-        <p class="loader-count"><span id="loaderCount">00</span>%</p>
+      <div class="loader-mark" aria-hidden="true">
+        <span>C</span>
+        <span>A</span>
       </div>
+      <p>Chasing Chetan ...</p>
     </div>
 
-    <div class="cursor-dot" aria-hidden="true"></div>
-    <div class="cursor-ring" aria-hidden="true"></div>
     <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+    <div class="section-indicator" id="sectionIndicator" aria-hidden="true">Home</div>
+    <div class="section-flash" id="sectionFlash" aria-hidden="true">Home</div>
 
     <header class="site-header">
-      <a class="wordmark magnetic" href="#top" aria-label="Chetan Awari home">
-        <span>CA</span>
-        <strong>Chetan Awari</strong>
+      <a class="wordmark" href="#top" aria-label="Chetan Awari home">
+        <span class="wordmark-badge">CA</span>
+        <strong class="roll-link" data-roll="Chetan Awari">Chetan Awari</strong>
       </a>
       <nav class="site-nav" aria-label="Primary navigation">
-        <a href="#profile">Profile</a>
-        <a href="#systems">Systems</a>
-        <a href="#projects">Projects</a>
-        <a href="#proof">Proof</a>
-        <a href="#contact">Contact</a>
+        <a class="roll-link" href="#about" data-roll="About">About</a>
+        <a class="roll-link" href="#skills" data-roll="Skills">Skills</a>
+        <a class="roll-link" href="#experience" data-roll="Experience">Experience</a>
+        <a class="roll-link" href="#projects" data-roll="Projects">Projects</a>
+        <a class="roll-link" href="#contact" data-roll="Contact">Contact</a>
       </nav>
-      <a class="nav-cta magnetic" href="assets/documents/Chetan_Awari_Resume_2026.pdf" target="_blank" rel="noreferrer">
+      <a class="nav-cta roll-link" href="assets/documents/Chetan_Awari_Resume_2026.pdf" target="_blank" rel="noreferrer" data-roll="Resume">
         Resume
       </a>
     </header>
 
+    <aside class="social-rail" aria-label="Social links">
+      <a href="https://github.com/mr-chetan-66" target="_blank" rel="noreferrer" aria-label="GitHub" data-label="GitHub">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 .8a11.2 11.2 0 0 0-3.54 21.82c.56.1.76-.24.76-.54v-2.1c-3.1.67-3.75-1.32-3.75-1.32-.5-1.3-1.24-1.65-1.24-1.65-1.02-.7.08-.68.08-.68 1.13.08 1.73 1.16 1.73 1.16 1 .1 2.63.72 3.22-.4.1-.73.4-1.23.72-1.52-2.47-.28-5.07-1.24-5.07-5.52 0-1.22.44-2.22 1.16-3-.12-.28-.5-1.42.1-2.96 0 0 .94-.3 3.08 1.15a10.58 10.58 0 0 1 5.6 0c2.14-1.45 3.08-1.15 3.08-1.15.6 1.54.22 2.68.1 2.96.72.78 1.16 1.78 1.16 3 0 4.3-2.6 5.23-5.08 5.5.4.35.76 1.03.76 2.08v3.08c0 .3.2.65.77.54A11.2 11.2 0 0 0 12 .8Z" />
+        </svg>
+      </a>
+      <a href="https://linkedin.com/in/chetan-awari/" target="_blank" rel="noreferrer" aria-label="LinkedIn" data-label="LinkedIn">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5.15 8.74H1.66V22h3.49V8.74ZM5.43 4.63a2 2 0 1 0-4 0 2 2 0 0 0 4 0ZM22.34 14.38c0-3.55-1.9-5.2-4.43-5.2a3.82 3.82 0 0 0-3.46 1.9h-.05V8.74h-3.34V22h3.48v-6.56c0-1.73.33-3.4 2.47-3.4 2.1 0 2.13 1.97 2.13 3.51V22h3.48l-.28-7.62Z" />
+        </svg>
+      </a>
+      <a href="https://leetcode.com/u/Chetan_Awari/" target="_blank" rel="noreferrer" aria-label="LeetCode" data-label="LeetCode">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M16.1 3.8a1.44 1.44 0 0 0-2.04 0l-8.3 8.3a5.75 5.75 0 0 0 0 8.13 5.75 5.75 0 0 0 8.14 0l1.68-1.68a1.44 1.44 0 1 0-2.04-2.04l-1.68 1.68a2.87 2.87 0 0 1-4.06-4.06l8.3-8.3a1.44 1.44 0 0 0 0-2.03Z" />
+          <path d="M9.8 13.5h9.95a1.44 1.44 0 1 0 0-2.88H9.8a1.44 1.44 0 1 0 0 2.88Z" />
+        </svg>
+      </a>
+    </aside>
+
     <main id="top">
-      <section class="hero scene-section" data-section="hero">
-        <canvas id="speedCanvas" aria-hidden="true"></canvas>
-        <div class="hero-orbit" aria-hidden="true">
-          <span>Java</span>
-          <span>Python</span>
-          <span>AWS</span>
-          <span>FastAPI</span>
+      <section class="hero watch-section" id="home" data-section-name="Home">
+        <div class="hero-scene" id="heroScene" aria-hidden="true">
+          <div class="scene-grid"></div>
+          <div class="scene-ring ring-one"></div>
+          <div class="scene-ring ring-two"></div>
+          <div class="scene-chip chip-a">Java</div>
+          <div class="scene-chip chip-b">AWS</div>
+          <div class="scene-chip chip-c">FastAPI</div>
+          <div class="portrait-stage">
+            <div class="portrait-depth depth-back"></div>
+            <img class="portrait-back" src="assets/images/chetan-white-portrait.png" alt="" />
+            <div class="portrait-glass">
+              <span>Available</span>
+              <strong>Software Engineer</strong>
+            </div>
+          </div>
         </div>
-        <div class="hero-content reveal">
-          <p class="kicker">Backend Development / Cloud Systems / Cyber Security</p>
-          <h1>
-            Software
-            <span>Engineer</span>
-            built for high-pressure systems.
-          </h1>
-          <p class="hero-copy">
-            I build backend services, APIs, cloud-ready workflows, and security-minded products across Java,
-            Python, FastAPI, AWS, PostgreSQL, Android, and decentralized credential systems.
+
+        <div class="hero-content">
+          <h1 class="hero-name reveal"><span>Hi, I&rsquo;m</span> Chetan Awari.</h1>
+          <p class="hero-title reveal">Software Engineer for secure, cloud-ready systems.</p>
+          <p class="hero-copy reveal">
+            I build backend services, APIs, Android products, and security-minded full-stack systems with
+            Java, Python, FastAPI, AWS, PostgreSQL, Kotlin, Firebase, Docker, and clean engineering habits.
           </p>
-          <div class="hero-actions">
-            <a class="btn primary magnetic" href="#projects">Enter Projects</a>
-            <a class="btn ghost magnetic" href="assets/documents/Chetan_Awari_Cover_Letter.pdf" target="_blank" rel="noreferrer">
-              Cover Letter
+          <div class="hero-actions reveal">
+            <a class="btn primary" href="#projects">View My Work</a>
+            <a class="btn glass" href="#contact">Contact Me</a>
+            <a class="btn outline" href="assets/documents/Chetan_Awari_Resume_2026.pdf" target="_blank" rel="noreferrer">
+              Download Resume
             </a>
           </div>
         </div>
-        <aside class="pilot-card reveal" data-tilt>
-          <div class="pilot-media">
-            <img src="https://avatars.githubusercontent.com/u/143293355?v=4" alt="Chetan Awari profile" />
+
+        <div class="hero-status reveal">
+          <div><strong>9.23</strong><span>CGPA</span></div>
+          <div><strong>3</strong><span>Internships</span></div>
+          <div><strong>350+</strong><span>DSA Problems</span></div>
+        </div>
+      </section>
+
+      <section class="section about-section watch-section" id="about" data-section-name="About">
+        <div class="section-kicker reveal">About</div>
+        <div class="about-layout">
+          <div class="about-copy reveal">
+            <h2>Hello. I build with discipline, speed, and proof.</h2>
+            <p>
+              I am a B.Tech Computer Science and Engineering Cyber Security graduate from G. H. Raisoni
+              College of Engineering, Nagpur, with a 9.23 CGPA and hands-on experience across Capgemini,
+              ANORG Technologies, and GHRCE CoE AIML.
+            </p>
+            <p>
+              My strongest story is backend plus cloud, with a security layer: Java/Python services,
+              AWS deployment practice, REST APIs, PostgreSQL-backed systems, Android performance work,
+              and decentralized credential verification through DECAID.
+            </p>
+            <div class="about-tags">
+              <span>Java</span>
+              <span>Python</span>
+              <span>AWS</span>
+              <span>FastAPI</span>
+              <span>PostgreSQL</span>
+              <span>Kotlin</span>
+            </div>
           </div>
-          <div class="pilot-data">
-            <p class="mono">Current signal</p>
-            <h2>Open to Software Engineer roles</h2>
-            <dl>
-              <div><dt>Location</dt><dd>Nagpur, India</dd></div>
-              <div><dt>CGPA</dt><dd>9.23</dd></div>
-              <div><dt>Internships</dt><dd>3</dd></div>
-              <div><dt>Problems</dt><dd>350+</dd></div>
-            </dl>
+          <div class="about-media reveal">
+            <div class="about-photo">
+              <img src="assets/images/p5.png" alt="Chetan Awari profile portrait" />
+            </div>
+            <div class="media-caption">
+              <span>Nagpur, India</span>
+              <strong>Open to software engineering roles</strong>
+            </div>
           </div>
-        </aside>
-      </section>
-
-      <section class="ticker" aria-label="Technology ticker">
-        <div>
-          <span>Java</span><span>Python</span><span>AWS</span><span>FastAPI</span><span>PostgreSQL</span>
-          <span>Redis</span><span>Docker</span><span>Android</span><span>Cyber Security</span><span>DSA</span>
         </div>
       </section>
 
-      <section class="section split" id="profile">
+      <section class="section process-section watch-section" data-section-name="Process">
         <div class="section-heading reveal">
-          <p class="kicker">Profile</p>
-          <h2>More than a resume. A build-ready engineer.</h2>
+          <p class="section-kicker">My Process</p>
+          <h2>How I turn a problem into shipped software.</h2>
         </div>
-        <div class="profile-grid">
-          <article class="glass-card reveal" data-tilt>
-            <span class="card-index">01</span>
-            <h3>Backend + cloud discipline</h3>
-            <p>
-              Capgemini experience with Java/Python backend services, AWS EC2/S3 deployment practice,
-              documentation, code reviews, and clean architecture habits.
-            </p>
+        <div class="process-grid">
+          <article class="process-card reveal">
+            <span>01</span>
+            <h3>Map the risk</h3>
+            <p>I isolate the hardest unknowns first: data flow, auth, deployment, edge cases, and failure modes.</p>
           </article>
-          <article class="glass-card reveal" data-tilt>
-            <span class="card-index">02</span>
-            <h3>Product velocity</h3>
-            <p>
-              ANORG full-stack internship across 3+ projects, REST API integrations, Git branching, PR reviews,
-              task tracking, and remote delivery cadence.
-            </p>
+          <article class="process-card reveal">
+            <span>02</span>
+            <h3>Build the spine</h3>
+            <p>I create the backend contracts, database shape, and deployment path before polishing the surface.</p>
           </article>
-          <article class="glass-card reveal" data-tilt>
-            <span class="card-index">03</span>
-            <h3>Security-minded systems</h3>
-            <p>
-              Cyber Security degree, DECAID credential verification platform, ZKP thinking, IPFS, Ethereum,
-              PostgreSQL, and published research exposure.
-            </p>
+          <article class="process-card reveal">
+            <span>03</span>
+            <h3>Prove the result</h3>
+            <p>I document the system, test workflows, and keep the UI focused on what a reviewer needs to trust.</p>
           </article>
         </div>
       </section>
 
-      <section class="section telemetry" id="systems">
+      <section class="section skills-section watch-section" id="skills" data-section-name="Skills">
         <div class="section-heading reveal">
-          <p class="kicker">Systems Telemetry</p>
-          <h2>Signals HR can read fast.</h2>
+          <p class="section-kicker">Skills</p>
+          <h2>Practical stack, not keyword noise.</h2>
         </div>
-        <div class="telemetry-grid reveal">
-          <article><strong>9.23</strong><span>CGPA / CSE Cyber Security</span></article>
-          <article><strong>3</strong><span>Software development internships</span></article>
-          <article><strong>15</strong><span>Public GitHub repositories</span></article>
-          <article><strong>350+</strong><span>DSA problems solved</span></article>
-          <article><strong>40%</strong><span>Android response-time reduction</span></article>
-          <article><strong>100%</strong><span>Daily reporting cadence at ANORG</span></article>
+        <div class="skill-cloud reveal">
+          <span>Java</span><span>Python</span><span>C++</span><span>FastAPI</span><span>Spring Boot</span>
+          <span>REST APIs</span><span>AWS EC2</span><span>AWS S3</span><span>PostgreSQL</span><span>MySQL</span>
+          <span>Redis</span><span>Docker</span><span>Firebase</span><span>Kotlin</span><span>Android</span>
+          <span>Git</span><span>Linux</span><span>Cyber Security</span><span>DSA</span><span>Postman</span>
         </div>
       </section>
 
-      <section class="section timeline-section">
+      <section class="section experience-section watch-section" id="experience" data-section-name="Experience">
         <div class="section-heading reveal">
-          <p class="kicker">Experience Line</p>
-          <h2>Three internships. Real engineering habits.</h2>
+          <p class="section-kicker">Experience</p>
+          <h2>Internship work with product pressure.</h2>
         </div>
-        <div class="race-line">
-          <article class="timeline-card reveal">
-            <span>Jan 2026 - Apr 2026</span>
-            <h3>Software Developer Intern / Capgemini</h3>
-            <p>Built and tested scalable backend services using Java and Python on AWS with clean architecture.</p>
-            <a href="https://drive.google.com/file/d/1SHqhfh68P2-Tb35FEjPpGcEohLISMeC7/view?usp=sharing" target="_blank" rel="noreferrer">View proof</a>
-          </article>
-          <article class="timeline-card reveal">
-            <span>Jun 2025 - Nov 2025</span>
-            <h3>Full Stack Web/App Intern / ANORG Technologies</h3>
-            <p>Integrated REST APIs across 3+ projects and collaborated through Git PR workflows.</p>
-            <a href="https://drive.google.com/file/d/1cL98r6Qxx_Y25Ntf6ZL5RQlHoUFuryo1/view?usp=sharing" target="_blank" rel="noreferrer">View proof</a>
-          </article>
-          <article class="timeline-card reveal">
-            <span>Dec 2024 - Jan 2025</span>
-            <h3>Software Development Intern / CoE AIML, GHRCE</h3>
-            <p>Built an IoT medicine dispenser with Arduino, ESP32, Firebase, and Android performance profiling.</p>
-            <a href="https://drive.google.com/file/d/1I-uqoNbuE3vbx_fWTyRbZYrtZw19ZahX/view?usp=sharing" target="_blank" rel="noreferrer">View proof</a>
-          </article>
-        </div>
-      </section>
-
-      <section class="section projects" id="projects">
-        <div class="section-heading reveal">
-          <p class="kicker">Projects</p>
-          <h2>Builds with enough depth to discuss in interviews.</h2>
-        </div>
-        <div class="project-stage">
-          <article class="project-feature reveal" data-tilt>
-            <div class="project-copy">
-              <p class="kicker">Flagship / Security / Full Stack</p>
-              <h3>DECAID</h3>
+        <div class="experience-board">
+          <article class="experience-card reveal">
+            <div class="exp-date">Jan 2026 - Apr 2026</div>
+            <div class="exp-body">
+              <h3 class="roll-link">Software Engineer Intern / Capgemini</h3>
               <p>
-                Decentralized Academic Identity & Credential Risk Assessment System using React, Node.js,
-                Express, FastAPI, PostgreSQL, Ethereum, Pinata, IPFS, and privacy-preserving verification.
+                Built backend modules with Java and Python, contributed to AWS EC2/S3 deployment practice,
+                reviewed code, documented workflows, and worked inside a professional agile cadence.
               </p>
-              <div class="stack-pills">
-                <span>React</span><span>FastAPI</span><span>PostgreSQL</span><span>Ethereum</span><span>IPFS</span>
+              <div class="exp-pills"><span>Java</span><span>Python</span><span>AWS</span><span>Docs</span></div>
+            </div>
+          </article>
+          <article class="experience-card reveal">
+            <div class="exp-date">Jun 2025 - Nov 2025</div>
+            <div class="exp-body">
+              <h3 class="roll-link">Software Development Intern / ANORG Technologies</h3>
+              <p>
+                Delivered full-stack features across multiple client-facing projects, handled REST integrations,
+                Git branching, pull requests, task tracking, and remote product collaboration.
+              </p>
+              <div class="exp-pills"><span>REST</span><span>Git</span><span>Frontend</span><span>Backend</span></div>
+            </div>
+          </article>
+          <article class="experience-card reveal">
+            <div class="exp-date">Dec 2024 - Jan 2025</div>
+            <div class="exp-body">
+              <h3 class="roll-link">Software Development Intern / CoE AIML, GHRCE</h3>
+              <p>
+                Built an Automated Medicine Dispenser prototype with embedded logic, scheduling behavior,
+                sensor workflows, and project documentation for a healthcare automation use case.
+              </p>
+              <div class="exp-pills"><span>IoT</span><span>Automation</span><span>C++</span><span>Prototype</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section projects-section watch-section" id="projects" data-section-name="Projects">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Projects</p>
+          <h2>Featured projects selected to match the latest resume update.</h2>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card featured reveal">
+            <span class="project-label">Featured Project 01 / Flagship</span>
+            <h3 class="roll-link">DECAID: Decentralized Academic ID</h3>
+            <p>
+              Blockchain-inspired credential verification platform for academic identity and document trust,
+              focused on secure issuance, verification, and reduced manual validation friction.
+            </p>
+            <div class="project-stack"><span>Python</span><span>FastAPI</span><span>PostgreSQL</span><span>Security</span></div>
+            <a class="project-link" href="https://github.com/mr-chetan-66/DECAID" target="_blank" rel="noreferrer">GitHub</a>
+          </article>
+          <article class="project-card reveal">
+            <span class="project-label">Featured Project 02 / Android</span>
+            <h3 class="roll-link">BMI Calculator Android App</h3>
+            <p>
+              Kotlin Android app with clean UI, input validation, BMI classification, and Firebase-ready
+              structure for mobile product delivery.
+            </p>
+            <div class="project-stack"><span>Kotlin</span><span>Android</span><span>Firebase</span></div>
+            <a class="project-link" href="https://github.com/mr-chetan-66/bmi_calculator_android_app" target="_blank" rel="noreferrer">GitHub</a>
+          </article>
+          <article class="project-card reveal">
+            <span class="project-label">Featured Support / Backend</span>
+            <h3 class="roll-link">FastAPI Project and Notes</h3>
+            <p>
+              API practice repository covering FastAPI fundamentals, route design, data validation,
+              documentation, and backend learning notes.
+            </p>
+            <div class="project-stack"><span>FastAPI</span><span>Python</span><span>API</span></div>
+            <a class="project-link" href="https://github.com/mr-chetan-66/FastAPI" target="_blank" rel="noreferrer">GitHub</a>
+          </article>
+          <article class="project-card reveal">
+            <span class="project-label">Internship Build / IoT</span>
+            <h3 class="roll-link">Automated Medicine Dispenser</h3>
+            <p>
+              Hardware-software prototype for scheduled medicine dispensing with automation logic,
+              sensor-aware workflows, and health-tech documentation.
+            </p>
+            <div class="project-stack"><span>IoT</span><span>C++</span><span>Automation</span></div>
+            <a class="project-link" href="https://github.com/mr-chetan-66/Automated-Medicine-Dispenser-AMDs-" target="_blank" rel="noreferrer">GitHub</a>
+          </article>
+          <article class="project-card reveal">
+            <span class="project-label">Latest GitHub / Security</span>
+            <h3 class="roll-link">Java Password Manager</h3>
+            <p>
+              Password manager with AES encryption practice, Java implementation, and a security-first
+              approach to local credential handling.
+            </p>
+            <div class="project-stack"><span>Java</span><span>AES</span><span>Security</span></div>
+            <a class="project-link" href="https://github.com/mr-chetan-66/Java-Password-Manager-with-AES-Encryption" target="_blank" rel="noreferrer">GitHub</a>
+          </article>
+          <article class="project-card reveal">
+            <span class="project-label">Simulation / Product</span>
+            <h3 class="roll-link">HR Employee Management Portal</h3>
+            <p>
+              Employee management workflow with CRUD behavior, role-focused screens, and structured
+              data handling for HR operations.
+            </p>
+            <div class="project-stack"><span>Java</span><span>SQL</span><span>CRUD</span></div>
+            <a class="project-link" href="https://github.com/mr-chetan-66/HR_Employee_Mgmt_Portal" target="_blank" rel="noreferrer">GitHub</a>
+          </article>
+        </div>
+        <div class="projects-action reveal">
+          <a class="btn outline" href="https://github.com/mr-chetan-66" target="_blank" rel="noreferrer">Explore All Repositories</a>
+        </div>
+      </section>
+
+      <section class="section proof-section watch-section" id="proof" data-section-name="Proof">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Proof</p>
+          <h2>Documents and signals that back the work.</h2>
+        </div>
+        <div class="proof-grid">
+          <a class="proof-card reveal" href="assets/documents/Chetan_Awari_Resume_2026.pdf" target="_blank" rel="noreferrer">
+            <span>Resume</span>
+            <strong>Updated 2026 software engineering resume</strong>
+          </a>
+          <a class="proof-card reveal" href="assets/documents/Chetan_Awari_Cover_Letter_20102002.docx" target="_blank" rel="noreferrer">
+            <span>Cover Letter</span>
+            <strong>Editable cover letter document</strong>
+          </a>
+          <a class="proof-card reveal" href="assets/certificates/FastAPI.pdf" target="_blank" rel="noreferrer">
+            <span>Certificate</span>
+            <strong>FastAPI learning proof</strong>
+          </a>
+          <a class="proof-card reveal" href="assets/certificates/HPE_completion_certificate.pdf" target="_blank" rel="noreferrer">
+            <span>Certificate</span>
+            <strong>HPE completion certificate</strong>
+          </a>
+        </div>
+      </section>
+
+      <section class="section contact-section watch-section" id="contact" data-section-name="Contact">
+        <div class="contact-shell reveal">
+          <div>
+            <p class="section-kicker">Contact</p>
+            <h2>Let us build the next serious thing.</h2>
+            <p>
+              I am open to software engineering roles, backend/cloud internships, and product teams that need
+              someone who can learn quickly, document clearly, and ship carefully.
+            </p>
+          </div>
+          <div class="contact-actions">
+            <div class="email-picker" data-email-picker>
+              <button class="btn primary email-toggle roll-link" type="button" aria-expanded="false" aria-controls="emailOptions">
+                Mail Me
+              </button>
+              <div class="email-options" id="emailOptions" role="menu" aria-label="Choose email service">
+                <a role="menuitem" href="mailto:chetanawari2002@gmail.com">
+                  <span>Gmail</span>
+                  <strong>chetanawari2002@gmail.com</strong>
+                </a>
+                <a role="menuitem" href="mailto:chetanawari2002@outlook.com">
+                  <span>Outlook</span>
+                  <strong>chetanawari2002@outlook.com</strong>
+                </a>
               </div>
             </div>
-            <a class="btn primary magnetic" href="https://github.com/mr-chetan-66/DECAID" target="_blank" rel="noreferrer">Open Repo</a>
-          </article>
-          <article class="project-card reveal" data-tilt>
-            <span>Android</span>
-            <h3>BMI Calculator</h3>
-            <p>Kotlin, Firebase, MVVM, LiveData, Jetpack Compose, 99% calculation accuracy, 60% UI latency reduction.</p>
-            <a href="https://github.com/mr-chetan-66/bmi_calculator_android_app" target="_blank" rel="noreferrer">View code</a>
-          </article>
-          <article class="project-card reveal" data-tilt>
-            <span>IoT</span>
-            <h3>Automated Medicine Dispenser</h3>
-            <p>Arduino, ESP32, Firebase, Android, QR-secured scheduling, and low-resource device optimization.</p>
-            <a href="https://github.com/mr-chetan-66/Automated-Medicine-Dispenser-AMDs-" target="_blank" rel="noreferrer">View code</a>
-          </article>
-          <article class="project-card reveal" data-tilt>
-            <span>Backend</span>
-            <h3>FastAPI Project & Notes</h3>
-            <p>Python backend practice around API structure, service design, deployment thinking, and documentation.</p>
-            <a href="https://github.com/mr-chetan-66/FastAPI" target="_blank" rel="noreferrer">View code</a>
-          </article>
-          <article class="project-card reveal" data-tilt>
-            <span>DSA</span>
-            <h3>DSA in Java</h3>
-            <p>Java data structures and algorithms reference for interview prep, practice, and problem-solving depth.</p>
-            <a href="https://github.com/mr-chetan-66/DSAinJava" target="_blank" rel="noreferrer">View code</a>
-          </article>
-        </div>
-      </section>
-
-      <section class="section proof" id="proof">
-        <div class="section-heading reveal">
-          <p class="kicker">Proof Deck</p>
-          <h2>Documents, certificates, and signals.</h2>
-        </div>
-        <div class="proof-deck reveal">
-          <a class="proof-card" href="assets/documents/Chetan_Awari_Resume_2026.pdf" target="_blank" rel="noreferrer">
-            <span>Resume</span><strong>Updated 2026 resume</strong>
-          </a>
-          <a class="proof-card" href="assets/documents/Chetan_Awari_Cover_Letter.pdf" target="_blank" rel="noreferrer">
-            <span>Cover Letter</span><strong>Software Engineer I pitch</strong>
-          </a>
-          <a class="proof-card" href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=AAAF8CC83F4E2BAB1C137616345A994848FC036A5A1502C543559BBC0AC4AC39" target="_blank" rel="noreferrer">
-            <span>Oracle</span><strong>OCI Foundations Associate</strong>
-          </a>
-          <a class="proof-card" href="https://drive.google.com/file/d/1yJOJLWVPUoL2LwjtMXx-uoRVU4_Lk5KI/view?usp=sharing" target="_blank" rel="noreferrer">
-            <span>AWS</span><strong>Cloud Practitioner Essentials</strong>
-          </a>
-          <a class="proof-card" href="assets/certificates/FastAPI.pdf" target="_blank" rel="noreferrer">
-            <span>FastAPI</span><strong>Masterclass certification</strong>
-          </a>
-          <a class="proof-card" href="assets/certificates/HPE_completion_certificate.pdf" target="_blank" rel="noreferrer">
-            <span>HPE</span><strong>Software Engineering Simulation</strong>
-          </a>
-          <a class="proof-card" href="https://drive.google.com/file/d/1Iuox6CNpakMByVsACOmQDrG4Usl6U5U5/view?usp=sharing" target="_blank" rel="noreferrer">
-            <span>Research</span><strong>Microsoft CMT conference paper</strong>
-          </a>
-        </div>
-      </section>
-
-      <section class="section contact" id="contact">
-        <div class="contact-panel reveal">
-          <div>
-            <p class="kicker">Contact</p>
-            <h2>Ready for backend, cloud, and product engineering work.</h2>
-            <p>
-              Send a message, review the resume, or open GitHub. The email flow lets you choose Gmail or Outlook
-              without forcing a desktop mail app.
-            </p>
+            <a class="btn glass roll-link" href="https://linkedin.com/in/chetan-awari/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="btn outline roll-link" href="https://github.com/mr-chetan-66" target="_blank" rel="noreferrer">GitHub</a>
           </div>
-          <form class="contact-form" id="contactForm">
-            <label>Name<input name="name" type="text" placeholder="Your name" required /></label>
-            <label>Email<input name="email" type="email" placeholder="you@example.com" required /></label>
-            <label class="full">Subject<input name="subject" type="text" placeholder="Software Engineer opportunity" required /></label>
-            <label class="full">Message<textarea name="message" rows="5" placeholder="Tell me what you want to build." required></textarea></label>
-            <button class="btn primary magnetic" type="submit">Choose Email App</button>
-            <p id="formNote" aria-live="polite"></p>
-          </form>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div>
-        <a class="wordmark" href="#top"><span>CA</span><strong>Chetan Awari</strong></a>
-        <p>Backend Development & Cloud Systems / Nagpur, India</p>
-      </div>
+      <p>Chetan Awari / Software Engineer</p>
+      <p>© 2026 Chetan Awari. All rights reserved.</p>
       <nav aria-label="Footer links">
-        <a href="https://github.com/mr-chetan-66" target="_blank" rel="noreferrer">GitHub</a>
-        <a href="https://linkedin.com/in/chetan-awari/" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a href="https://leetcode.com/u/Chetan_Awari/" target="_blank" rel="noreferrer">LeetCode</a>
-        <a href="assets/documents/Chetan_Awari_Resume_2026.pdf" target="_blank" rel="noreferrer">Resume</a>
+        <a href="#home" class="footer-back-to-top" data-hover="Back to top">Home</a>
+        <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </nav>
-      <p>&copy; 2026 Chetan Awari. All rights reserved.</p>
     </footer>
-
-    <div class="email-modal" id="emailModal" aria-hidden="true">
-      <div class="email-dialog" role="dialog" aria-modal="true" aria-labelledby="emailDialogTitle">
-        <button class="dialog-close magnetic" type="button" id="closeEmailDialog" aria-label="Close email chooser">x</button>
-        <p class="kicker">Email App</p>
-        <h2 id="emailDialogTitle">Choose where to open the message.</h2>
-        <p>Gmail is recommended. Outlook is available if you prefer it.</p>
-        <div class="email-options">
-          <a class="btn primary magnetic" id="openGmail" href="https://mail.google.com/mail/?view=cm&fs=1&to=chetanawari2002@gmail.com" target="_blank" rel="noreferrer">Open Gmail</a>
-          <a class="btn ghost magnetic" id="openOutlook" href="https://outlook.live.com/mail/0/deeplink/compose?to=chetanawari2002@gmail.com" target="_blank" rel="noreferrer">Open Outlook</a>
-        </div>
-      </div>
-    </div>
 
     <script src="script.js"></script>
   </body>
