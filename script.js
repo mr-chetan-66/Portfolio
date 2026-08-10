@@ -3,14 +3,45 @@ const progress = document.getElementById("scrollProgress");
 const indicator = document.getElementById("sectionIndicator");
 const flash = document.getElementById("sectionFlash");
 const heroScene = document.getElementById("heroScene");
+const eventEndpoint =
+  window.PORTFOLIO_EVENT_ENDPOINT ||
+  document.querySelector('meta[name="portfolio-event-endpoint"]')?.content ||
+  "";
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+const trackPortfolioEvent = (eventName, detail = {}) => {
+  if (!eventEndpoint) return;
+
+  const payload = {
+    eventName,
+    detail,
+    path: window.location.pathname,
+    referrer: document.referrer || "",
+    timestamp: new Date().toISOString(),
+  };
+
+  const body = JSON.stringify(payload);
+  if (navigator.sendBeacon) {
+    navigator.sendBeacon(eventEndpoint, new Blob([body], { type: "application/json" }));
+    return;
+  }
+
+  fetch(eventEndpoint, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body,
+    keepalive: true,
+  }).catch(() => {});
+};
 
 window.addEventListener("load", () => {
   window.setTimeout(() => {
     loader?.classList.add("hidden");
     document.body.classList.add("loaded");
   }, 1150);
+
+  trackPortfolioEvent("page_view", { title: document.title });
 });
 
 document.querySelectorAll(".roll-link").forEach((link) => {
@@ -146,6 +177,15 @@ if (emailPicker && emailToggle) {
     }
   });
 }
+
+document.querySelectorAll("[data-track]").forEach((element) => {
+  element.addEventListener("click", () => {
+    trackPortfolioEvent(element.dataset.track, {
+      label: element.dataset.trackLabel || element.textContent.trim(),
+      href: element.getAttribute("href") || "",
+    });
+  });
+});
 
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener("click", (event) => {

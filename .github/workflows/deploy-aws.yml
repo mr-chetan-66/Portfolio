@@ -1,0 +1,43 @@
+name: Deploy portfolio to AWS
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  deploy:
+    name: Sync static portfolio to S3 and CloudFront
+    runs-on: ubuntu-latest
+    if: ${{ vars.AWS_DEPLOY_ENABLED == 'true' }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - name: Sync portfolio files to S3
+        run: |
+          aws s3 sync . "s3://${{ vars.AWS_S3_BUCKET }}" \
+            --delete \
+            --exclude ".git/*" \
+            --exclude ".github/*" \
+            --exclude ".agents/*" \
+            --exclude ".codex/*"
+
+      - name: Invalidate CloudFront cache
+        if: ${{ vars.AWS_CLOUDFRONT_DISTRIBUTION_ID != '' }}
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id "${{ vars.AWS_CLOUDFRONT_DISTRIBUTION_ID }}" \
+            --paths "/*"

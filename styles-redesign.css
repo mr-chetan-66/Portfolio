@@ -995,6 +995,18 @@ svg {
     rgba(255, 255, 255, 0.05);
 }
 
+.project-card.cloud-project {
+  border-color: rgba(47, 111, 255, 0.34);
+  background:
+    linear-gradient(135deg, rgba(47, 111, 255, 0.2), transparent 36%),
+    linear-gradient(145deg, rgba(184, 255, 44, 0.11), transparent 52%),
+    rgba(255, 255, 255, 0.05);
+}
+
+.project-card.cloud-project .project-label {
+  color: #8fb1ff;
+}
+
 .project-card:hover {
   transform: translateY(-4px);
   border-color: rgba(184, 255, 44, 0.45);
