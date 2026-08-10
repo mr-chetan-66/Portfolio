@@ -1,0 +1,16 @@
+project_name = "chetan-portfolio"
+environment  = "prod"
+aws_region   = "ap-south-1"
+
+# Leave both empty for the first test deploy and use the CloudFront domain.
+domain_name       = ""
+route53_zone_name = ""
+
+github_owner = "mr-chetan-66"
+github_repo  = "Portfolio"
+
+# Set to false only if this AWS account already has the GitHub Actions OIDC provider.
+create_github_oidc_provider = true
+
+monthly_budget_limit_usd = 10
+budget_alert_emails      = ["chetanawari2002@gmail.com"]

@@ -33,7 +33,13 @@ jobs:
             --exclude ".git/*" \
             --exclude ".github/*" \
             --exclude ".agents/*" \
-            --exclude ".codex/*"
+            --exclude ".codex/*" \
+            --exclude "infra/*" \
+            --exclude ".terraform/*" \
+            --exclude "*.tfstate" \
+            --exclude "*.tfstate.*" \
+            --exclude "*.tfvars" \
+            --exclude "*.tfvars.json"
 
       - name: Invalidate CloudFront cache
         if: ${{ vars.AWS_CLOUDFRONT_DISTRIBUTION_ID != '' }}

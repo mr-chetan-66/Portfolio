@@ -86,6 +86,8 @@ Email notifications should be sent only for high-intent events such as resume op
 4. CloudFront invalidation refreshes cached HTML/CSS/JS.
 5. Both Vercel and AWS URLs show the same portfolio.
 
+Detailed self-service setup steps are in [`aws-setup-guide.md`](aws-setup-guide.md).
+
 ## GitHub Variables Needed
 
 - `AWS_DEPLOY_ENABLED`: set to `true` when AWS infra is ready.
