@@ -11,7 +11,7 @@ const eventEndpoint =
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 const trackPortfolioEvent = (eventName, detail = {}) => {
-  if (!eventEndpoint) return;
+  if (!eventName || !eventEndpoint.startsWith("https://")) return;
 
   const payload = {
     eventName,
@@ -178,9 +178,9 @@ if (emailPicker && emailToggle) {
   });
 }
 
-document.querySelectorAll("[data-track]").forEach((element) => {
+document.querySelectorAll("[data-track-event], [data-track]").forEach((element) => {
   element.addEventListener("click", () => {
-    trackPortfolioEvent(element.dataset.track, {
+    trackPortfolioEvent(element.dataset.trackEvent || element.dataset.track, {
       label: element.dataset.trackLabel || element.textContent.trim(),
       href: element.getAttribute("href") || "",
     });
