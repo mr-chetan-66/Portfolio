@@ -21,16 +21,12 @@ const trackPortfolioEvent = (eventName, detail = {}) => {
     timestamp: new Date().toISOString(),
   };
 
-  const body = JSON.stringify(payload);
-  if (navigator.sendBeacon) {
-    navigator.sendBeacon(eventEndpoint, new Blob([body], { type: "application/json" }));
-    return;
-  }
-
   fetch(eventEndpoint, {
     method: "POST",
+    mode: "cors",
+    credentials: "omit",
     headers: { "Content-Type": "application/json" },
-    body,
+    body: JSON.stringify(payload),
     keepalive: true,
   }).catch(() => {});
 };
