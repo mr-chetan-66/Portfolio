@@ -6,9 +6,9 @@ This repository contains my personal portfolio website and related assets.
 
 The system architecture diagram is available in both SVG and PDF formats in the `docs` folder.
 
-- SVG (rendered inline on GitHub):
+- JPEG (rendered inline on GitHub):
 
-  ![AWS Architecture](docs/Porfolio_AWS_Architecture.svg)
+  ![AWS Architecture](docs/Porfolio_AWS_Architecture.jpg)
 
 - PDF (downloadable):
 
