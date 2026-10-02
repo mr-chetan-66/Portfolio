@@ -800,6 +800,114 @@ svg {
   gap: 18px;
 }
 
+.career-transition {
+  position: relative;
+  min-height: 390px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(88px, 1fr));
+  align-items: center;
+  gap: 0 12px;
+  overflow: hidden;
+  padding: 56px 20px 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 18% 82%, rgba(47, 111, 255, 0.16), transparent 38%),
+    radial-gradient(circle at 84% 20%, rgba(184, 255, 44, 0.12), transparent 36%),
+    rgba(255, 255, 255, 0.035);
+}
+
+.career-path {
+  position: absolute;
+  z-index: 0;
+  inset: 38px 0 0;
+  width: 100%;
+  height: calc(100% - 38px);
+  overflow: visible;
+  pointer-events: none;
+}
+
+.career-path path {
+  fill: none;
+  stroke: url(#careerPathGradient);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 9 11;
+  stroke-dashoffset: 0;
+  animation: careerPathTravel 1.6s linear infinite;
+  filter: drop-shadow(0 0 5px rgba(184, 255, 44, 0.24));
+}
+
+.career-path circle {
+  fill: var(--paper);
+  stroke: var(--acid);
+  stroke-width: 3;
+}
+
+@keyframes careerPathTravel {
+  to {
+    stroke-dashoffset: -20px;
+  }
+}
+
+.career-transition-label,
+.career-date {
+  color: var(--acid);
+  font: 900 0.62rem/1.4 var(--mono);
+  text-transform: uppercase;
+}
+
+.career-transition-label {
+  position: absolute;
+  top: 22px;
+  left: 24px;
+}
+
+.career-stop {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+  width: 100%;
+  max-width: 190px;
+}
+
+.career-stop-left {
+  grid-column: 1;
+  grid-row: 3;
+  justify-self: end;
+  text-align: right;
+}
+
+.career-stop-next {
+  grid-column: 2;
+  grid-row: 2;
+  justify-self: start;
+  text-align: left;
+}
+
+.career-stop-future {
+  grid-row: 1;
+}
+
+.career-stop strong {
+  display: block;
+  margin: 12px 0 8px;
+  font: 400 clamp(1.45rem, 3.2vw, 2.4rem)/0.95 var(--display);
+  text-transform: uppercase;
+}
+
+.career-stop small {
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.career-stop-next strong,
+.career-stop-future strong {
+  color: var(--blue);
+}
+
 .about-photo {
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -1017,11 +1125,38 @@ svg {
 }
 
 .project-link {
-  width: max-content;
-  margin-top: 24px;
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 11px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
   color: var(--acid);
-  font: 900 0.7rem/1 var(--mono);
+  font: 900 0.62rem/1 var(--mono);
   text-transform: uppercase;
+  text-decoration: none;
+  transition: color 180ms ease, background 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.project-actions .project-link:hover {
+  color: var(--ink);
+  background: var(--acid);
+  border-color: var(--acid);
+  transform: translateY(-2px);
+}
+
+.project-link-disabled {
+  color: var(--muted);
+  border-style: dashed;
+  cursor: not-allowed;
 }
 
 .projects-action {
@@ -1030,7 +1165,7 @@ svg {
 
 .proof-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
 }
 
@@ -1222,9 +1357,19 @@ svg {
     min-height: auto;
   }
 
-  .hero-scene {
+  .hero-content {
     order: -1;
+  }
+
+  .hero-scene {
+    order: 0;
     min-height: min(75vh, 640px);
+  }
+
+  .hero-content .reveal,
+  .hero-status.reveal {
+    opacity: 1;
+    transform: none;
   }
 
   .portrait-stage {
@@ -1273,15 +1418,15 @@ svg {
   }
 
   .hero {
-    padding: 44px 16px 34px;
+    padding: 28px 16px 24px;
   }
 
   .hero-scene {
-    min-height: 430px;
+    min-height: min(72vw, 320px);
   }
 
   .portrait-stage {
-    width: min(94vw, 430px);
+    width: min(72vw, 320px);
   }
 
   .scene-chip,
@@ -1290,11 +1435,13 @@ svg {
   }
 
   .hero h1 {
-    font-size: clamp(4rem, 22vw, 7.4rem);
+    font-size: 3.5rem;
+    line-height: 0.9;
   }
 
   .hero-title {
-    font-size: clamp(2.15rem, 12vw, 4rem);
+    font-size: 2rem;
+    line-height: 1;
   }
 
   .hero-status {
@@ -1344,9 +1491,23 @@ svg {
     grid-column: auto;
   }
 
-  .about-media,
-  .about-media img {
-    min-height: 420px;
+  .career-transition {
+    min-height: 360px;
+    padding-right: 14px;
+    padding-left: 14px;
+    gap: 8px;
+  }
+
+  .career-transition-label {
+    left: 16px;
+  }
+
+  .career-stop strong {
+    font-size: clamp(1.1rem, 6vw, 1.55rem);
+  }
+
+  .career-stop small {
+    font-size: 0.7rem;
   }
 
   .portrait-glass {
@@ -1362,6 +1523,11 @@ svg {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .career-path path {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+
   *,
   *::before,
   *::after {

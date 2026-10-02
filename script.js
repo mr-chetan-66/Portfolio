@@ -31,12 +31,20 @@ const trackPortfolioEvent = (eventName, detail = {}) => {
   }).catch(() => {});
 };
 
-window.addEventListener("load", () => {
+const dismissLoader = () => {
   window.setTimeout(() => {
     loader?.classList.add("hidden");
     document.body.classList.add("loaded");
-  }, 1150);
+  }, 350);
+};
 
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", dismissLoader, { once: true });
+} else {
+  dismissLoader();
+}
+
+window.addEventListener("load", () => {
   trackPortfolioEvent("page_view", { title: document.title });
 });
 
